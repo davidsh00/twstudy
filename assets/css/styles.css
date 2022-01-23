@@ -1,0 +1,526 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+:root {
+  --orange: hsl(36, 80%, 50%);
+  --white: hsl(0, 0%, 100%);
+  --WHITE: hsl(0,0%,100%);
+  --BLACK: hsl(0,0%,0%);
+  --black-90: hsl(0,0%,10%);
+  --black-70: hsl(0,0%,30%);
+  --black-alpha-40: hsla(0,0%,0%,0.4);
+  --yellow-light: hsl(44,95%,83%);
+  --green-light: hsl(158,68%,75%);
+  --red-light: hsl(0,84%,80%);
+  --orange-light: hsl(22,85%,80%);
+  --select-box-bg-color: hsl(0,0%,100%);
+  --border-color-1: hsl(0,0%,90%);
+}
+
+:root {
+  --hue-value-1:0;
+  --hue-vlaue-2:230;
+  --main-color:hsl(var(--hue-value-1),75%,61%);
+  --button-hover-color:hsl(var(--hue-value-1),57%,53%);
+  --body-bg-color:hsl(var(--hue-value-1),63%,97%);
+  --border-color-2:hsl(var(--hue-value-1),40%,90%);
+  --shadow:0 0 10px hsl(var(--hue-value-1),40%,90%);
+  --body-gradient-bg-color-1:hsla(var(--hue-value-1),100%,50%,0.2);
+  --body-gradient-bg-color-2:hsla(var(--hue-value-2),100%,50%,0.2);
+  --decoration-bg-color-1:hsl(var(--hue-value-1),100%,70%);
+  --decoration-bg-color-2:hsl(var(--hue-value-2),100%,70%);
+}
+
+/*--------------------------------------------------
+
+    **********table of content**********
+01. =google fonts
+02. =variables
+03. =overrides variables for - them dark
+04. =base
+05. =box
+06. =customized bootstrap classes
+07. =animation keyframes
+08. =section - padding , title
+09. =buttons
+10. =page loader
+11. =circular img
+12. =forms
+13. =video modal
+14. =pagination
+15. =breadcrumb
+16. =tabs
+17. =bubble animation
+18. =styled switcher
+19. =header
+20. =footer
+21. =banner section
+22. =fun facts section
+23. =courses section
+24. =testimonials section
+25. =bai section
+26. =course details secion
+27. =contact section
+
+
+---------------------------------------------------*/
+/* -------------------------------
+ 01. =google fonts
+--------------------------------------*/
+/* ----------------------
+ 02. =variables
+------------------------------------*/
+/* ---------------------------------------
+ 03. =overrides variables for - them dark
+----------------------------------------------*/
+/* ---------------------------------------
+ 04. =base
+----------------------------------------------*/
+body {
+  background-color: var(--body-bg-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--black-70);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--main-color);
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--black-90);
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+::section {
+  color: var(--WHITE);
+  background-color: var(--main-color);
+}
+
+/* ------------------------
+05. =box
+-----------------------------*/
+.box {
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  padding: 30px;
+}
+
+/* ------------------------
+06. =customized bootstrap classes
+-----------------------------*/
+.container {
+  --bs-gutter-x: 15px;
+  max-width: 1140px;
+}
+
+.row {
+  --bs-gutter-x: 30px;
+}
+
+/* ------------------------
+07. =animation keyframes
+-----------------------------*/
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ------------------------
+08. =section - padding , title
+-----------------------------*/
+.section-padding {
+  padding: 60px 0;
+}
+
+.section-title {
+  margin-bottom: 40px;
+}
+
+.section-title .title {
+  font-size: 20px;
+  color: var(--main-color);
+  text-transform: capitalize;
+}
+
+.section-title .sub-title {
+  font-size: 35px;
+  font-weight: 600;
+  color: var(--black-90);
+}
+
+/* ------------------------
+09. =buttons
+-----------------------------*/
+.btn-them {
+  background-color: var(--main-color);
+  color: var(--WHITE);
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 500;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-them:hover {
+  color: var(--WHITE);
+  background-color: var(--button-hover-color);
+}
+
+.btn-them:focus {
+  box-shadow: 0 0 8px var(--main-color);
+}
+
+/* ------------------------
+10. =page loader
+-----------------------------*/
+/* ------------------------
+11. =circular img
+-----------------------------*/
+.circular-img {
+  max-width: 360px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.circular-img-inner {
+  text-align: center;
+  border-radius: 0 0 180px 180px;
+  overflow: hidden;
+}
+
+.circular-img-circle {
+  height: 360px;
+  width: 360px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 50%;
+}
+
+.circular-img img {
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------------
+12. =forms
+
+-----------------------------*/
+/* ------------------------
+13. =video modal
+-----------------------------*/
+/* ------------------------
+14. =pagination
+-----------------------------*/
+/* ------------------------
+15. =breadcrumb
+-----------------------------*/
+/* ------------------------
+16. =tabs
+-----------------------------*/
+/* ------------------------
+17. =bubble animation
+-----------------------------*/
+/* ------------------------
+18. =styled switcher
+-----------------------------*/
+/* ------------------------
+19. =header
+-----------------------------*/
+.header {
+  border-bottom: 1px solid var(--border-color-2);
+}
+
+.header-logo a {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--black-70);
+}
+
+.header-logo span {
+  color: var(--main-color);
+}
+
+.header .menu-item {
+  display: inline-block;
+  margin-left: 40px;
+  position: relative;
+}
+
+.header .menu-item > a {
+  display: block;
+  padding: 24px 0;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: var(--black-90);
+  transition: color 0.3s ease;
+}
+
+.header .sub-menu-item a:hover,
+.header .menu-item:hover > a {
+  color: var(--main-color);
+}
+
+.header .menu-item > a i {
+  font-size: 13px;
+  margin-left: 3px;
+  pointer-events: none;
+}
+
+.header .sub-menu {
+  position: absolute;
+  background-color: var(--white);
+  left: 0;
+  top: 100%;
+  width: 210px;
+  padding: 10px 0;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media (min-width: 992px) {
+  .header .menu-item:hover > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.header .sub-menu-item a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--black-90);
+  text-transform: capitalize;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.header-backdrop,
+.header-close-btn,
+.header-hamburger-btn {
+  display: none;
+}
+
+/* ------------------------
+20. =footer
+-----------------------------*/
+/* ------------------------
+21. =banner section
+-----------------------------*/
+.banner-section {
+  padding: 80px 0;
+  min-height: 680px;
+}
+
+.banner-text h2 {
+  font-size: 20px;
+  color: var(--main-color);
+}
+
+.banner-text h1 {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.banner-section .circular-img-circle {
+  background-color: var(--red-light);
+}
+
+/* ------------------------
+22. =fun facts section
+-----------------------------*/
+.fun-facts-item {
+  padding: 15px 0;
+}
+
+.fun-facts-item h2 {
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.fun-facts-item p {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.fun-facts-item .style-1 {
+  color: var(--black-70);
+}
+
+.fun-facts-item .style-2 {
+  color: var(--green-light);
+}
+
+.fun-facts-item .style-3 {
+  color: var(--red-light);
+}
+
+.fun-facts-item .style-4 {
+  color: var(--orange-light);
+}
+
+/* ------------------------
+23. =courses section
+-----------------------------*/
+.course-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.course-item .img-box {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.course-item .link {
+  color: var(--black-70);
+  display: inline-block;
+}
+
+.course-item .title {
+  text-transform: capitalize;
+  margin: 15px 0;
+  transition: color 0.3s ease;
+}
+
+.course-item:hover .title {
+  color: var(--main-color);
+}
+
+.course-item .instructor {
+  text-transform: capitalize;
+  margin: 0 0 12px;
+}
+
+.course-item .instructor img {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.course-item .rating {
+  font-size: 14px;
+}
+
+.course-item .average-rating {
+  font-weight: 600px;
+  color: var(--orange);
+}
+
+.course-item .average-stars {
+  color: var(--orange);
+}
+
+.course-item .price {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: var(--main-color);
+  color: var(--WHITE);
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* ------------------------
+24. =testimonials section
+-----------------------------*/
+.testimonials-section .img-box {
+  height: 150px;
+  width: 150px;
+  background-color: var(--red-light);
+  margin: 30px auto 50px;
+}
+
+.testimonials-section .img-box::before,
+.testimonials-section .img-box::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--red-light);
+  animation: spin 15s linear infinite;
+}
+
+.testimonials-section .img-box::before {
+  height: 180px;
+  width: 180px;
+  top: -15px;
+  left: -15px;
+  border-left: 1px solid transparent;
+}
+
+.testimonials-section .img-box::after {
+  height: 210px;
+  width: 210px;
+  top: -30px;
+  left: -30px;
+  border-right: 1px solid transparent;
+}
+
+.testimonials-item h3 {
+  text-transform: capitalize;
+}
+
+.testimonials-item .text-2 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.testimonials-section .carousel-control-prev,
+.testimonials-section .carousel-control-next {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  background-color: var(--main-color);
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+/* ------------------------
+25. =bai section
+-----------------------------*/
+/* ------------------------
+26. =course details secion
+-----------------------------*/
+/* ------------------------
+27. =contact section
+-----------------------------*/
+
+/*# sourceMappingURL=styles.css.map */
